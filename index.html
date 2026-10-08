@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bizning hikoyamiz ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="hearts"></div>
+
+  <main class="app">
+
+    <!-- 1-BO'LIM -->
+    <section class="screen active" id="screen1">
+
+      <div class="emoji">🥰</div>
+
+      <h1>Men bilan tanishasizmi?</h1>
+
+      <p class="subtitle">
+        Albatta, krasavchigim? ❤️
+      </p>
+
+      <div class="buttons">
+        <button class="yes" onclick="goTo(2)">
+          Albatta ❤️
+        </button>
+
+        <button class="no" id="no1" onclick="refuse1()">
+          Yo‘q, tanishmayman 😤
+        </button>
+      </div>
+
+      <p id="message1" class="message"></p>
+
+    </section>
+
+
+    <!-- 2-BO'LIM -->
+    <section class="screen" id="screen2">
+
+      <div class="emoji">👀</div>
+
+      <h1>Ismingizni tanlang</h1>
+
+      <p class="subtitle">
+        Qaysi Foti ekaningizni bilib olaylik 😌
+      </p>
+
+      <div class="buttons">
+
+        <button class="option" onclick="chooseFoti()">
+          Foti ❤️
+        </button>
+
+        <button class="option" id="cyrillic" onclick="chooseCyrillic()">
+          Фоти
+        </button>
+
+      </div>
+
+      <p id="message2" class="message"></p>
+
+    </section>
+
+
+    <!-- 3-BO'LIM -->
+    <section class="screen" id="screen3">
+
+      <div class="emoji">👁️✨</div>
+
+      <h1>
+        Copichino, ko‘zlaringizni<br>
+        videosini qachon tashlaysiz? 👀
+      </h1>
+
+      <div class="buttons">
+
+        <button class="yes" onclick="videoYes()">
+          Hozir, 5 minutda 😎
+        </button>
+
+        <button class="no" id="runaway" onclick="runAway()">
+          Tashamayman, sizdan arazlaganman 😤
+        </button>
+
+      </div>
+
+      <p id="message3" class="message"></p>
+
+    </section>
+
+
+    <!-- 4-BO'LIM -->
+    <section class="screen final" id="screen4">
+
+      <div class="big-heart">❤️</div>
+
+      <h1>Meni sevasizmi?</h1>
+
+      <p class="subtitle">
+        Rostini ayting... 🥺
+      </p>
+
+      <button class="love-button" onclick="celebrate()">
+        Ha, albatta ❤️
+      </button>
+
+      <div id="finalMessage"></div>
+
+    </section>
+
+  </main>
+
+  <div id="celebration"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

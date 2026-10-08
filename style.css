@@ -1,0 +1,372 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+
+  background:
+    radial-gradient(circle at top, #ffb6d9, transparent 40%),
+    linear-gradient(135deg, #ff5c9a, #9b4dff);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+}
+
+/* Asosiy karta */
+
+.app {
+  width: min(92%, 500px);
+  min-height: 620px;
+
+  padding: 35px 25px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  z-index: 5;
+
+  background: rgba(255,255,255,.16);
+  backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 35px;
+
+  box-shadow:
+    0 25px 70px rgba(80,0,80,.3);
+}
+
+.screen {
+  display: none;
+
+  width: 100%;
+
+  text-align: center;
+
+  animation: appear .6s ease;
+}
+
+.screen.active {
+  display: block;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scale(.85) translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.emoji {
+  font-size: 75px;
+  margin-bottom: 20px;
+
+  animation: float 2s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%,100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 1.25;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  font-size: 18px;
+  opacity: .95;
+  margin-bottom: 35px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+button {
+  width: min(100%, 330px);
+
+  border: none;
+  border-radius: 18px;
+
+  padding: 17px 20px;
+
+  font-size: 17px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: .25s ease;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,.18);
+}
+
+button:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+button:active {
+  transform: scale(.94);
+}
+
+.yes,
+.love-button {
+  color: white;
+
+  background: linear-gradient(
+    135deg,
+    #ff2d75,
+    #ff0055
+  );
+}
+
+.no {
+  color: white;
+  background: #e53935;
+}
+
+.option {
+  color: #8b1452;
+
+  background: white;
+}
+
+.message {
+  margin-top: 25px;
+
+  font-size: 20px;
+  font-weight: bold;
+
+  min-height: 30px;
+
+  animation: pop .4s ease;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(.5);
+    opacity: 0;
+  }
+
+  70% {
+    transform: scale(1.15);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Final */
+
+.final {
+  position: relative;
+}
+
+.big-heart {
+  font-size: 100px;
+
+  animation:
+    heartBeat 1.2s infinite,
+    float 2s infinite ease-in-out;
+}
+
+@keyframes heartBeat {
+  0%,100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.love-button {
+  font-size: 20px;
+}
+
+/* Uchib yuradigan yuraklar */
+
+.heart {
+  position: fixed;
+
+  bottom: -50px;
+
+  font-size: 25px;
+
+  pointer-events: none;
+
+  animation: fly linear forwards;
+
+  z-index: 1;
+}
+
+@keyframes fly {
+
+  from {
+    transform:
+      translateY(0)
+      rotate(0deg);
+
+    opacity: 1;
+  }
+
+  to {
+    transform:
+      translateY(-110vh)
+      rotate(360deg);
+
+    opacity: 0;
+  }
+}
+
+/* Qochadigan tugma */
+
+.run-away {
+  position: fixed !important;
+  width: 220px !important;
+
+  z-index: 100;
+}
+
+/* Bayram */
+
+#celebration {
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: 200;
+}
+
+.confetti {
+  position: absolute;
+
+  font-size: 30px;
+
+  animation: confettiFall 2s ease-out forwards;
+}
+
+@keyframes confettiFall {
+
+  0% {
+    transform:
+      translateY(0)
+      scale(.5)
+      rotate(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform:
+      translateY(100vh)
+      scale(1.5)
+      rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.uuu {
+  position: fixed;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%) scale(.5);
+
+  font-size: clamp(45px, 12vw, 90px);
+
+  font-weight: 900;
+
+  color: white;
+
+  text-shadow:
+    0 5px 20px #ff0066;
+
+  animation: uuu 1.5s ease forwards;
+
+  z-index: 300;
+
+  white-space: nowrap;
+}
+
+@keyframes uuu {
+
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(.2) rotate(-15deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.3) rotate(5deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(0);
+  }
+}
+
+/* Telefon */
+
+@media (max-width: 600px) {
+
+  body {
+    padding: 12px;
+  }
+
+  .app {
+    min-height: 580px;
+    padding: 30px 18px;
+    border-radius: 28px;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .emoji {
+    font-size: 60px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 16px;
+  }
+
+  .big-heart {
+    font-size: 80px;
+  }
+}
